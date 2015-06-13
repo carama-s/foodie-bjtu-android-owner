@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/padding_end" >
+        <LinearLayout
+            android:id="@+id/ll_header"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:background="@color/material_deep_teal_200">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:id="@+id/imageView_imageProfile"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/ll_header"
+            android:orientation="vertical"
+            android:paddingTop="16dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp" >
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/met_firstname"
+                android:hint="Firstname"
+                android:textSize="16sp"
+                android:paddingTop="16dp"
+                android:singleLine="true"
+                app:met_iconLeft="@drawable/ic_person_white"
+                app:met_floatingLabel="highlight"
+                app:met_baseColor="@color/textColorPrimary"
+                app:met_primaryColor="@color/colorPrimary"
+                app:met_errorColor="@color/colorError"
+                app:met_textColor="@color/textColorPrimary" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/met_lastname"
+                android:hint="Lastname"
+                android:textSize="16sp"
+                android:paddingTop="16dp"
+                android:singleLine="true"
+                app:met_iconLeft="@drawable/ic_person_white"
+                app:met_floatingLabel="highlight"
+                app:met_baseColor="@color/textColorPrimary"
+                app:met_primaryColor="@color/colorPrimary"
+                app:met_errorColor="@color/colorError"
+                app:met_textColor="@color/textColorPrimary" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/met_addressMail"
+                android:hint="Email address"
+                android:textSize="16sp"
+                android:paddingTop="16dp"
+                android:singleLine="true"
+                android:inputType="textEmailAddress"
+                app:met_iconLeft="@drawable/ic_mail_white"
+                app:met_floatingLabel="highlight"
+                app:met_baseColor="@color/textColorPrimary"
+                app:met_primaryColor="@color/colorPrimary"
+                app:met_errorColor="@color/colorError"
+                app:met_textColor="@color/textColorPrimary" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/met_password"
+                android:hint="Password"
+                android:textSize="16sp"
+                android:paddingTop="16dp"
+                android:singleLine="true"
+                app:met_iconLeft="@drawable/ic_lock_outline_white"
+                app:met_floatingLabel="highlight"
+                app:met_baseColor="@color/textColorPrimary"
+                app:met_primaryColor="@color/colorPrimary"
+                app:met_errorColor="@color/colorError"
+                app:met_textColor="@color/textColorPrimary" />
+        </LinearLayout>
+
+        <com.getbase.floatingactionbutton.FloatingActionsMenu
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignBottom="@id/ll_header"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="-40dp"
+            android:id="@+id/fab_ImageAccount"
+            app:fab_addButtonColorNormal="@color/colorAccent"
+            app:fab_addButtonColorPressed="@color/colorAccent"
+            app:fab_addButtonPlusIconColor="@color/colorWhite" >
+
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/fab_uploadImageAccount"
+                app:fab_icon="@drawable/ic_image_white"
+                app:fab_colorNormal="@color/colorAccent"
+                app:fab_colorPressed="@color/colorAccent" />
+
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/fab_takeImageAccount"
+                app:fab_icon="@drawable/ic_photo_camera_white"
+                app:fab_colorNormal="@color/colorAccent"
+                app:fab_colorPressed="@color/colorAccent" />
+        </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+    </RelativeLayout>
+</ScrollView>
+

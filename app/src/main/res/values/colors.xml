@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccentDark">#B72D5C</color>
+    <color name="textColorPrimary">#212121</color>
+    <color name="textColorLightPrimaryColor">#C5CAE9</color>
+    <color name="textColorSecondary">#727272</color>
+    <color name="textColorHint">#B6B6B6</color>
+    <color name="divider">#B6B6B6</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorError">#e74c3c</color>
+
+    <color name="mdtp_accent_color">@color/colorPrimary</color>
+    <color name="mdtp_accent_color_dark">@color/colorPrimaryDark</color>
+</resources>

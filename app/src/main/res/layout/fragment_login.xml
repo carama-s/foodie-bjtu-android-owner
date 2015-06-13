@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="bottom">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"
+            android:textSize="24dp"
+            android:text="Foodie"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.5"
+        android:paddingLeft="32dp"
+        android:paddingRight="32dp"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:descendantFocusability="beforeDescendants"
+        android:focusableInTouchMode="true">
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/met_addressMail"
+            android:hint="Address mail"
+            android:textSize="18sp"
+            android:singleLine="true"
+            android:inputType="textEmailAddress"
+            app:met_baseColor="@color/colorWhite"
+            app:met_primaryColor="@color/colorAccent"
+            app:met_errorColor="@color/colorError"
+            app:met_textColor="@color/colorWhite"/>
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/met_password"
+            android:inputType="textPassword"
+            android:hint="Password"
+            android:textSize="18sp"
+            android:fontFamily="sans-serif"
+            android:singleLine="true"
+            android:layout_marginTop="8dp"
+            app:met_baseColor="@color/colorWhite"
+            app:met_primaryColor="@color/colorAccent"
+            app:met_errorColor="@color/colorError"
+            app:met_textColor="@color/colorWhite"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:id="@+id/button_login"
+            android:enabled="false"
+            android:text="Login"
+            android:textColor="@color/button_material_light"
+            android:stateListAnimator="@null"
+            android:background="@drawable/button_accent_ripple"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_signUp"
+            android:gravity="center"
+            android:background="@color/transparent"
+            android:textColor="@color/colorWhite"
+            android:textAllCaps="false"
+            android:text="Sign up on Foodie"/>
+    </LinearLayout>
+
+
+</LinearLayout>

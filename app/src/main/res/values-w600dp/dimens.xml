@@ -1,0 +1,5 @@
+<resources>
+
+    <dimen name="add_restaurant_name_size">45sp</dimen>
+
+</resources>

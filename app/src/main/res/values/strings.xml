@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Foodie</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="coupon_secret">0x534f3c65ce800000</string>
+</resources>

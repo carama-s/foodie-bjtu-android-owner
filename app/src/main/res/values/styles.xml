@@ -1,0 +1,40 @@
+<resources>
+
+    <style name="MyTheme" parent="MyTheme.Base">
+    </style>
+
+    <style name="MyTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="android:textColorPrimary">@color/colorWhite</item>
+        <item name="android:textColorSecondary">@color/colorWhite</item>
+        <item name="android:textColorHint">@color/textColorHint</item>
+        <item name="android:divider">@color/divider</item>
+    </style>
+
+    <style name="MyThemeNavigationDrawer" parent="MaterialNavigationDrawerTheme.Light">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="android:textColorPrimary">@color/colorWhite</item>
+        <item name="android:textColorSecondary">@color/colorWhite</item>
+        <item name="android:textColorHint">@color/textColorHint</item>
+        <item name="android:divider">@color/divider</item>
+
+        <item name="learningPattern">false</item>
+        <item name="rippleBackport">true</item>
+        <item name="singleAccount">true</item>
+        <item name="drawerType">@integer/DRAWERTYPE_ACCOUNTS</item>
+
+        <item name="md_dark_theme">false</item>
+        <item name="md_title_color">@color/textColorPrimary</item>
+        <item name="md_content_color">@color/textColorSecondary</item>
+
+    </style>
+
+</resources>

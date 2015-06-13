@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/scrollView_main">
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/padding_end">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/ll_header"
+            android:background="@color/material_deep_teal_200">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:id="@+id/imageView_imagePresentation"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@+id/ll_header">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ll_gallery">
+
+                <org.lucasr.twowayview.widget.TwoWayView
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/twowayview_imageGallery"
+                    android:background="@color/textColorHint"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    app:twowayview_layoutManager="ListLayoutManager" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="16dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="16dp"
+                android:id="@+id/ll_fields">
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/met_restaurantName"
+                    android:hint="Name"
+                    android:textSize="16sp"
+                    app:met_floatingLabel="highlight"
+                    app:met_iconLeft="@drawable/ic_home_white"
+                    app:met_baseColor="@color/textColorPrimary"
+                    app:met_primaryColor="@color/colorPrimary"
+                    app:met_errorColor="@color/colorError"
+                    app:met_textColor="@color/textColorPrimary"
+                    android:singleLine="true"/>
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/met_restaurantDescription"
+                    android:hint="Description"
+                    android:textSize="16sp"
+                    android:paddingTop="16dp"
+                    app:met_floatingLabel="highlight"
+                    app:met_iconLeft="@drawable/ic_description_white"
+                    app:met_baseColor="@color/textColorPrimary"
+                    app:met_primaryColor="@color/colorPrimary"
+                    app:met_errorColor="@color/colorError"
+                    app:met_textColor="@color/textColorPrimary" />
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/met_restaurantPhone"
+                    android:hint="Phone"
+                    android:textSize="16sp"
+                    android:paddingTop="16dp"
+                    app:met_iconLeft="@drawable/ic_local_phone_white"
+                    app:met_floatingLabel="highlight"
+                    app:met_baseColor="@color/textColorPrimary"
+                    app:met_primaryColor="@color/colorPrimary"
+                    app:met_errorColor="@color/colorError"
+                    app:met_textColor="@color/textColorPrimary"
+                    android:singleLine="true"
+                    android:phoneNumber="true"/>
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/met_restaurantEmail"
+                    android:hint="Email address"
+                    android:inputType="textEmailAddress"
+                    android:textSize="16sp"
+                    android:paddingTop="16dp"
+                    app:met_iconLeft="@drawable/ic_mail_white"
+                    app:met_floatingLabel="highlight"
+                    app:met_baseColor="@color/textColorPrimary"
+                    app:met_primaryColor="@color/colorPrimary"
+                    app:met_errorColor="@color/colorError"
+                    app:met_textColor="@color/textColorPrimary"
+                    android:singleLine="true"/>
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/met_searchRestaurantAddress"
+                    android:hint="Search restaurant address"
+                    android:textSize="16sp"
+                    android:paddingTop="16dp"
+                    app:met_iconLeft="@drawable/ic_place_white"
+                    app:met_floatingLabel="highlight"
+                    app:met_baseColor="@color/textColorPrimary"
+                    app:met_primaryColor="@color/colorPrimary"
+                    app:met_errorColor="@color/colorError"
+                    app:met_textColor="@color/textColorPrimary"
+                    android:singleLine="true"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/ll_map"
+                    android:orientation="vertical"
+                    android:paddingLeft="64dp"
+                    android:paddingTop="20dp">
+                    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:id="@+id/fragment_map"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:name="com.google.android.gms.maps.SupportMapFragment">
+                    </fragment>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <com.getbase.floatingactionbutton.FloatingActionsMenu
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignBottom="@id/ll_header"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="-40dp"
+            android:id="@+id/fab_imageRestaurant"
+            app:fab_addButtonColorNormal="@color/colorAccent"
+            app:fab_addButtonColorPressed="@color/colorAccent"
+            app:fab_addButtonPlusIconColor="@color/colorWhite" >
+
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/fab_editImageHeaderRestaurant"
+                app:fab_icon="@drawable/ic_image_white"
+                app:fab_colorNormal="@color/colorAccent"
+                app:fab_colorPressed="@color/colorAccent" />
+
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/fab_editImageGallery"
+                app:fab_icon="@drawable/ic_photo_library_white"
+                app:fab_colorNormal="@color/colorAccent"
+                app:fab_colorPressed="@color/colorAccent" />
+        </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+    </RelativeLayout>
+</ScrollView>
