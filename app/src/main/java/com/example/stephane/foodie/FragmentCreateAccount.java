@@ -54,6 +54,8 @@ public class FragmentCreateAccount extends Fragment {
     private ImageView           mImageProfile;
     private Uri                 mImageProfileUri = null;
     private FloatingActionsMenu mFabAddImage;
+    private FloatingActionButton    mFabUploadImage;
+    private FloatingActionButton    mFabTakeImage;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -70,8 +72,8 @@ public class FragmentCreateAccount extends Fragment {
 
         View content = inflater.inflate(R.layout.fragment_create_account, container, false);
 
-        FloatingActionButton fabUploadImage = (FloatingActionButton) content.findViewById(R.id.fab_uploadImageAccount);
-        fabUploadImage.setOnClickListener(new View.OnClickListener() {
+        mFabUploadImage = (FloatingActionButton) content.findViewById(R.id.fab_uploadImageAccount);
+        mFabUploadImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
@@ -80,8 +82,8 @@ public class FragmentCreateAccount extends Fragment {
             }
         });
 
-        FloatingActionButton fabTakeImage = (FloatingActionButton) content.findViewById(R.id.fab_takeImageAccount);
-        fabTakeImage.setOnClickListener(new View.OnClickListener() {
+        mFabTakeImage = (FloatingActionButton) content.findViewById(R.id.fab_takeImageAccount);
+        mFabTakeImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -106,6 +108,13 @@ public class FragmentCreateAccount extends Fragment {
         return content;
     }
 
+    private void resetFloatingButtonError() {
+        mFabUploadImage.setColorNormal(getResources().getColor(R.color.colorAccent));
+        mFabUploadImage.setColorPressed(getResources().getColor(R.color.colorAccent));
+        mFabTakeImage.setColorNormal(getResources().getColor(R.color.colorAccent));
+        mFabTakeImage.setColorPressed(getResources().getColor(R.color.colorAccent));
+    }
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -115,10 +124,12 @@ public class FragmentCreateAccount extends Fragment {
             case 100:
                 if (resultCode == Activity.RESULT_OK) {
                     mImageProfileUri = data.getData();
+                    resetFloatingButtonError();
                     mImageProfile.setImageURI(mImageProfileUri);
                 }
             case 101:
                 if (requestCode == 101 && resultCode == Activity.RESULT_OK) {
+                    resetFloatingButtonError();
                     mImageProfile.setImageURI(mImageProfileUri);
                 }
         }
@@ -186,6 +197,14 @@ public class FragmentCreateAccount extends Fragment {
         boolean vLastname = mLastnameField.validate();
         boolean vAddressMail = mAddressMailField.validate();
         boolean vPassword = mPasswordField.validate();
+
+        if (mImageProfile.getDrawable() == null) {
+            mFabAddImage.expand();
+            mFabTakeImage.setColorNormal(getResources().getColor(R.color.colorError));
+            mFabTakeImage.setColorPressed(getResources().getColor(R.color.colorError));
+            mFabUploadImage.setColorNormal(getResources().getColor(R.color.colorError));
+            mFabUploadImage.setColorPressed(getResources().getColor(R.color.colorError));
+        }
 
         MyUtils.hideKeyboard();
 
